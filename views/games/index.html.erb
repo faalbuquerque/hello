@@ -1,0 +1,21 @@
+<h1>Todos os Games</h1>
+
+
+<% @games.each do |game| %>
+  <p>
+    <%= game.id %>
+  </p>
+  <p>
+    <%= game.name %>
+  </p>
+    <p>
+    <%= game.genre %>
+  </p>
+    <p>
+    <%= game.created_at %>
+  </p>
+  <p>
+    <%= game.updated_at %>
+  </p>
+  <hr>
+<% end %>
