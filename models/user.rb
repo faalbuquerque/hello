@@ -4,35 +4,35 @@ require 'byebug'
 
 require 'pg'
 
-class Game
-  attr_accessor :id, :name, :genre, :created_at, :updated_at
+class User
+  attr_accessor :id, :name, :email, :created_at, :updated_at
 
   def initialize(hash)
     @id = hash[:id]
     @name = hash[:name]
-    @genre = hash[:genre]
+    @genre = hash[:email]
     @created_at = hash[:created_at]
     @updated_at = hash[:updated_at]
   end
 
   def self.all
-    games = fetch_games
-    games.map {|game| new(game) }
+    users = fetch_users
+    users.map {|user| new(user) }
   end
 
-  def self.fetch_games
+  def self.fetch_users
 
     begin
-      conection = PG.connect(dbname: 'hello_development', host: 'db',
+      conection = PG.connect(dbname: 'frankcalendar_development', host: 'db',
                              user: 'postgres', password: 'postgres')
 
-      lines = conection.exec('SELECT * FROM games')
+      lines = conection.exec('SELECT * FROM users')
 
       lines.map do |line|
         {
           id: line['id'],
           name: line['name'],
-          genre: line['genre'],
+          genre: line['email'],
           created_at: line['created_at'],
           updated_at: line['updated_at']
         }

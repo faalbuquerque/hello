@@ -1,17 +1,17 @@
 require 'pg'
 
 #cria a tabela(query)
-sql = "CREATE TABLE games (
+sql = "CREATE TABLE users (
         id SERIAL PRIMARY KEY,
-        name varchar(40) NOT NULL,
-        genre varchar(40) NOT NULL,
+        name varchar(200) NOT NULL,
+        email varchar(200) NOT NULL,
         created_at date NOT NULL,
         updated_at date NOT NULL
       );"
 
 begin
   #conexcao com o banco
-  conection = PG.connect(dbname: 'hello_development', host: 'db',
+  conection = PG.connect(dbname: 'frankcalendar_development', host: 'db',
                          user: 'postgres', password: 'postgres')
 
   conection.exec(sql)

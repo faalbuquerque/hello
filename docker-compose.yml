@@ -6,7 +6,7 @@ services:
     ports:
       - "4567:4567"
     volumes:
-      - .:/hello-docker
+      - .:/frank_calendar_docker
     environment:
       TZ: America/Sao_Paulo
 

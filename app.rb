@@ -1,20 +1,20 @@
 require 'sinatra'
-require_relative 'models/game'
+require_relative 'models/user'
 
 get '/' do
   erb :'home/index.html'
 end
 
-get '/games' do
-  @games = Game.all
+get '/users' do
+  @users = User.all
 
-  erb :'games/index.html'
+  erb :'users/index.html'
 end
 
 #rota
-get '/games/:id' do
+get '/users/:id' do
 
   #caminho do arquivo
-  erb :'games/show.html'
+  erb :'users/show.html'
 
 end

@@ -1,6 +1,6 @@
 FROM ruby:3.0.1
-ADD . /hello-docker
-WORKDIR /hello-docker
+ADD . /frank_calendar_docker
+WORKDIR /frank_calendar_docker
 RUN bundle install
 
 EXPOSE 4567
